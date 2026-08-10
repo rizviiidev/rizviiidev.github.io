@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ================= SEO: Primary meta ================= -->
+<title>Ali R. Rizvi — Digital Marketing, Technology & Business</title>
+<meta name="description" content="Ali R. Rizvi is a 17-year-old tech enthusiast from Islamabad, Pakistan, building a broad skill set across digital marketing, SEO, web development and business as he works toward becoming an entrepreneur.">
+<meta name="keywords" content="Ali R. Rizvi, Digital Marketing, SEO, Social Media, Web Development, WordPress, Technology, Business, Entrepreneurship, Islamabad, Pakistan">
+<meta name="author" content="Ali R. Rizvi">
+<link rel="canonical" href="https://rizviiidev.github.io/">
+
+<!-- ================= SEO: Open Graph ================= -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ali R. Rizvi — Digital Marketing, Technology & Business">
+<meta property="og:description" content="17-year-old tech enthusiast from Islamabad, Pakistan. Learning digital marketing, SEO, web development and business — building in public.">
+<meta property="og:image" content="assets/images/og-cover.jpg">
+<meta property="og:url" content="https://rizviiidev.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- ================= Icons ================= -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%23050505%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2242%22%20text-anchor%3D%22middle%22%20font-family%3D%22Manrope%2C%20sans-serif%22%20font-weight%3D%22800%22%20font-size%3D%2226%22%20fill%3D%22%23F5F4F2%22%3EAR%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+
+<!-- ================= Fonts ================= -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* =============================================================
+   ALI R. RIZVI — PERSONAL BRAND SITE
+   Table of contents:
+   1. Reset & base
+   2. Design tokens
+   3. Typography
+   4. Layout utilities
+   5. Navigation
+   6. Hero
+   7. Section shells / shared components
+   8. About
+   9. Focus
+   10. Skills
+   11. Work / Projects
+   12. Journey
+   13. Content
+   14. Beyond
+   15. Contact
+   16. Footer
+   17. Scroll-reveal animation
+   18. Responsive breakpoints
+   19. Reduced motion
+============================================================== */
+
+/* 1. RESET & BASE ------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+img, svg { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+button { font: inherit; cursor: pointer; }
+ul { list-style: none; }
+
+/* 2. DESIGN TOKENS -------------------------------------------
+   Black dominates (~80%), off-white text, restrained gray accents.
+   Change these values to re-theme the whole site. */
+:root{
+  --black:        #050505;   /* primary background */
+  --black-soft:   #0D0D0D;   /* card / raised surface */
+  --black-soft-2: #121212;   /* alternate section background */
+  --line:         rgba(255,255,255,0.10);
+  --line-strong:  rgba(255,255,255,0.22);
+  --off-white:    #F5F4F2;   /* primary text */
+  --gray:         #9A9A9A;   /* secondary text */
+  --gray-dim:     #6E6E6E;   /* tertiary / muted text */
+
+  --font-display: 'Manrope', sans-serif;
+  --font-body:    'Inter', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+
+  --container: 1120px;
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+
+body{
+  background: var(--black);
+  color: var(--off-white);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection{ background: var(--off-white); color: var(--black); }
+
+:focus-visible{
+  outline: 2px solid var(--off-white);
+  outline-offset: 3px;
+}
+
+.skip-link{
+  position: absolute;
+  top: -60px; left: 16px;
+  background: var(--off-white);
+  color: var(--black);
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  z-index: 999;
+  transition: top .2s ease;
+}
+.skip-link:focus{ top: 16px; }
+
+/* 3. TYPOGRAPHY ------------------------------------------------ */
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height: 1.1; }
+.body-text{ color: var(--gray); font-size: 16px; max-width: 60ch; margin-bottom: 16px; }
+.body-text strong{ color: var(--off-white); font-weight: 600; }
+
+/* 4. LAYOUT UTILITIES ------------------------------------------ */
+.section{ padding: 120px 24px; }
+.section-inner{ max-width: var(--container); margin: 0 auto; }
+.section-alt{ background: var(--black-soft-2); }
+
+.section-label{
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: var(--gray-dim);
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+.section-title{
+  font-size: clamp(28px, 4vw, 42px);
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+  max-width: 16ch;
+}
+.section-intro{ color: var(--gray); max-width: 56ch; margin-bottom: 48px; font-size: 16px; }
+.subsection-title{ font-size: 18px; margin: 56px 0 22px; }
+
+/* Buttons */
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 15px 28px;
+  border-radius: 100px;
+  transition: transform .25s ease, background .25s ease, border-color .25s ease;
+  border: 1px solid transparent;
+}
+.btn-solid{ background: var(--off-white); color: var(--black); }
+.btn-outline{ background: transparent; color: var(--off-white); border-color: var(--line-strong); }
+.btn:hover{ transform: translateY(-2px); }
+.btn-outline:hover{ border-color: var(--off-white); }
+.btn-full{ width: 100%; }
+
+/* Tags */
+.tag-row{ display: flex; flex-wrap: wrap; gap: 10px; }
+.tag{
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--off-white);
+  background: var(--black-soft);
+  border: 1px solid var(--line);
+  padding: 9px 16px;
+  border-radius: 100px;
+}
+.tag-sm{ font-size: 11px; padding: 6px 12px; }
+
+/* 5. NAVIGATION -------------------------------------------------- */
+.site-header{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  background: rgba(5,5,5,0.7);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s ease, background .3s ease;
+}
+.site-header.scrolled{ border-bottom-color: var(--line); background: rgba(5,5,5,0.9); }
+
+.nav{
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+}
+.nav-logo{
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+.nav-logo span{ color: var(--gray-dim); }
+
+.nav-menu{ display: flex; align-items: center; gap: 6px; }
+.nav-link{
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--gray);
+  padding: 9px 14px;
+  border-radius: 100px;
+  transition: color .25s ease, background .25s ease;
+}
+.nav-link:hover, .nav-link.active{ color: var(--off-white); background: var(--black-soft); }
+.nav-cta{ border: 1px solid var(--line-strong); margin-left: 8px; }
+
+.nav-toggle{
+  display: none;
+  background: none; border: none;
+  width: 32px; height: 22px;
+  position: relative;
+}
+.nav-toggle span{
+  position: absolute; left: 0; right: 0; height: 1.5px;
+  background: var(--off-white);
+  transition: transform .3s ease, opacity .3s ease;
+}
+.nav-toggle span:nth-child(1){ top: 0; }
+.nav-toggle span:nth-child(2){ top: 10px; }
+.nav-toggle span:nth-child(3){ top: 20px; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1){ transform: translateY(10px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2){ opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3){ transform: translateY(-10px) rotate(-45deg); }
+
+/* 6. HERO --------------------------------------------------------- */
+.hero{
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 140px 24px 100px;
+  overflow: hidden;
+}
+.hero-grid{
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black, transparent);
+  z-index: 0;
+}
+.hero-skyline{
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 180px;
+  opacity: 0.9;
+  z-index: 0;
+  mask-image: linear-gradient(to top, black, transparent);
+}
+.hero-orbit{
+  position: absolute;
+  top: 50%; right: -8%;
+  transform: translateY(-50%);
+  width: min(640px, 60vw);
+  opacity: 0.9;
+  z-index: 0;
+}
+.orbit-dot{ animation: orbitSpin 22s linear infinite; transform-origin: 300px 300px; }
+@keyframes orbitSpin{ from{ transform: rotate(0deg); } to{ transform: rotate(360deg); } }
+
+.hero-inner{ position: relative; z-index: 1; max-width: 760px; margin: 0 auto; text-align: center; }
+.eyebrow{
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--gray);
+  letter-spacing: 1px;
+  margin-bottom: 28px;
+}
+.hero-title{
+  font-size: clamp(56px, 11vw, 128px);
+  letter-spacing: -3px;
+  margin-bottom: 24px;
+}
+.hero-title .line{ display: block; }
+.hero-tagline{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(16px, 2.2vw, 20px);
+  color: var(--off-white);
+  margin-bottom: 20px;
+}
+.hero-desc{
+  color: var(--gray);
+  font-size: 16.5px;
+  max-width: 52ch;
+  margin: 0 auto 40px;
+}
+.hero-desc strong{ color: var(--off-white); font-weight: 600; }
+.hero-actions{ display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+.scroll-cue{
+  position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+  width: 1px; height: 46px; background: var(--line-strong);
+  z-index: 1; overflow: hidden;
+}
+.scroll-cue span{
+  position: absolute; top: -100%; left: 0; width: 100%; height: 100%;
+  background: var(--off-white);
+  animation: cueDrop 2.2s ease-in-out infinite;
+}
+@keyframes cueDrop{ 0%{ top: -100%; } 60%{ top: 100%; } 100%{ top: 100%; } }
+
+/* 8. ABOUT --------------------------------------------------------- */
+.about-grid{ display: grid; grid-template-columns: 1.4fr 1fr; gap: 60px; align-items: start; }
+
+.loop-chain{
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+  margin-top: 28px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--off-white);
+}
+.loop-chain i{ width: 16px; height: 1px; background: var(--line-strong); display: inline-block; }
+.loop-chain span{ border: 1px solid var(--line); padding: 8px 14px; border-radius: 100px; }
+
+.fact-card{
+  background: var(--black-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+.fact-row{ display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px dashed var(--line); font-size: 13.5px; gap: 12px; }
+.fact-row:last-child{ border-bottom: none; }
+.fact-k{ font-family: var(--font-mono); color: var(--gray-dim); }
+.fact-v{ font-weight: 600; text-align: right; }
+
+/* 9. FOCUS ----------------------------------------------------------- */
+.focus-grid{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.focus-card{ background: var(--black); padding: 32px 26px; transition: background .3s ease; }
+.focus-card:hover{ background: var(--black-soft); }
+.focus-icon{ margin-bottom: 20px; }
+.focus-card h3{ font-size: 16px; margin-bottom: 10px; }
+.focus-card p{ color: var(--gray); font-size: 13.5px; }
+
+/* 10. SKILLS ----------------------------------------------------------- */
+.skills-grid{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px 60px; }
+.skill-group-title{ font-size: 14px; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 1px; color: var(--gray-dim); margin-bottom: 16px; }
+.skill-note{ color: var(--gray-dim); font-size: 12.5px; margin-top: 14px; font-style: italic; }
+
+/* 11. WORK -------------------------------------------------------------- */
+.work-grid{ display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px; }
+.work-card{
+  background: var(--black); border: 1px solid var(--line); border-radius: var(--radius);
+  overflow: hidden; transition: border-color .3s ease, transform .3s ease;
+}
+.work-card:hover{ border-color: var(--line-strong); transform: translateY(-4px); }
+.work-thumb{ padding: 22px 22px 0; }
+.work-body{ padding: 26px; }
+.work-top{ display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.work-top h3{ font-size: 19px; }
+.status-pill{ font-family: var(--font-mono); font-size: 10.5px; padding: 4px 10px; border-radius: 100px; border: 1px solid var(--line-strong); }
+.status-live{ color: var(--off-white); }
+.work-body p{ color: var(--gray); font-size: 14px; margin-bottom: 18px; }
+.work-links{ display: flex; gap: 18px; margin-top: 18px; font-family: var(--font-mono); font-size: 12.5px; }
+.work-links a{ color: var(--off-white); border-bottom: 1px solid var(--line-strong); padding-bottom: 2px; }
+.work-links a:hover{ border-color: var(--off-white); }
+
+.work-card-placeholder{
+  display: flex; flex-direction: column; align-items: flex-start; justify-content: center;
+  padding: 36px; border-style: dashed; border-color: var(--line-strong);
+}
+.placeholder-icon{ margin-bottom: 18px; opacity: .8; }
+.work-card-placeholder h3{ font-size: 16px; margin-bottom: 8px; }
+.work-card-placeholder p{ color: var(--gray-dim); font-size: 13.5px; }
+
+/* 12. JOURNEY ------------------------------------------------------------- */
+.journey-layout{ display: grid; grid-template-columns: 1.5fr 1fr; gap: 24px; align-items: stretch; margin-bottom: 20px; }
+.journey-visual{
+  background: var(--black-soft); border: 1px solid var(--line); border-radius: var(--radius);
+  display: flex; align-items: center; justify-content: center; padding: 20px;
+}
+.journey-visual svg{ width: 100%; max-width: 220px; height: auto; }
+.journey-card{
+  background: var(--black-soft); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 36px; margin-bottom: 20px;
+}
+.journey-top{ display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 6px; }
+.journey-top h3{ font-size: 19px; }
+.journey-link{ font-family: var(--font-mono); font-size: 12.5px; color: var(--gray); border-bottom: 1px solid var(--line-strong); padding-bottom: 2px; }
+.journey-link:hover{ color: var(--off-white); }
+.journey-note{ font-family: var(--font-mono); font-size: 12px; color: var(--gray-dim); margin-bottom: 18px; }
+.journey-list{ margin-top: 16px; display: grid; gap: 10px; }
+.journey-list li{ color: var(--gray); font-size: 14.5px; padding-left: 20px; position: relative; }
+.journey-list li::before{ content: '—'; position: absolute; left: 0; color: var(--gray-dim); }
+
+.learning-grid{ display: flex; flex-wrap: wrap; gap: 12px; }
+.learning-chip{
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-mono); font-size: 13px;
+  border: 1px solid var(--line); padding: 12px 18px; border-radius: 100px;
+}
+.learning-chip .dot{ width: 6px; height: 6px; border-radius: 50%; background: var(--off-white); }
+
+/* 13. CONTENT ------------------------------------------------------------- */
+.content-grid{ display: grid; grid-template-columns: 1.3fr 1fr; gap: 60px; align-items: start; }
+.content-links{ display: flex; flex-direction: column; gap: 12px; }
+.content-link{
+  display: flex; justify-content: space-between; align-items: center;
+  border: 1px solid var(--line); border-radius: var(--radius-sm);
+  padding: 18px 20px; transition: border-color .25s ease, background .25s ease;
+}
+.content-link:hover{ border-color: var(--line-strong); background: var(--black-soft); }
+.content-link span{ font-family: var(--font-mono); font-size: 12px; color: var(--gray-dim); }
+.content-link strong{ font-family: var(--font-display); font-size: 15px; }
+.content-link-disabled{ opacity: 0.55; }
+.icon-sm{ width: 15px; height: 15px; margin-right: 8px; vertical-align: -3px; color: inherit; }
+.link-label{ display: inline-flex; align-items: center; }
+.contact-socials a, .contact-socials .social-disabled{ display: inline-flex; align-items: center; }
+
+/* 14. BEYOND ---------------------------------------------------------------- */
+.beyond-layout{ display: grid; grid-template-columns: 1.3fr 1fr; gap: 50px; align-items: center; }
+.beyond-grid{ display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 30px; }
+.reading-card{
+  background: var(--black-soft); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 22px 24px; max-width: 420px;
+}
+.reading-label{ font-family: var(--font-mono); font-size: 11.5px; color: var(--gray-dim); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+.reading-row{ display: flex; align-items: center; gap: 14px; padding: 10px 0; }
+.reading-row + .reading-row{ border-top: 1px dashed var(--line); }
+.book-spine{ width: 8px; height: 40px; border-radius: 3px; background: var(--spine); flex-shrink: 0; opacity: 0.85; }
+.book-title{ font-family: var(--font-display); font-size: 14px; font-weight: 600; margin-bottom: 3px; }
+.book-author{ font-family: var(--font-mono); font-size: 12px; color: var(--gray-dim); }
+.beyond-visual{ display: flex; justify-content: center; }
+.beyond-visual svg{ width: 100%; max-width: 260px; height: auto; }
+.beyond-chip{
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-body); font-size: 14px;
+  border: 1px solid var(--line); padding: 13px 20px; border-radius: 100px;
+  transition: border-color .25s ease, transform .25s ease;
+}
+.beyond-chip:hover{ border-color: var(--line-strong); transform: translateY(-2px); }
+
+/* 15. CONTACT ---------------------------------------------------------------- */
+.contact-section{ padding-bottom: 100px; }
+.contact-title{ max-width: none; }
+.contact-grid{ display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start; }
+.contact-email{
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 700;
+  border-bottom: 2px solid var(--line-strong);
+  padding-bottom: 6px;
+  margin-bottom: 26px;
+}
+.contact-email:hover{ border-color: var(--off-white); }
+.contact-socials{ display: flex; gap: 22px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 13px; }
+.contact-socials a{ color: var(--gray); }
+.contact-socials a:hover{ color: var(--off-white); }
+.social-disabled{ color: var(--gray-dim); }
+
+.contact-form{ display: grid; gap: 18px; }
+.field{ display: grid; gap: 8px; }
+.field label{ font-family: var(--font-mono); font-size: 12px; color: var(--gray-dim); }
+.field input, .field textarea{
+  background: var(--black-soft); border: 1px solid var(--line); border-radius: var(--radius-sm);
+  padding: 13px 16px; color: var(--off-white); font-family: var(--font-body); font-size: 14.5px;
+  resize: vertical;
+}
+.field input:focus, .field textarea:focus{ border-color: var(--line-strong); outline: none; }
+.form-status{ font-family: var(--font-mono); font-size: 12.5px; color: var(--gray); min-height: 18px; }
+
+/* 16. FOOTER ------------------------------------------------------------------ */
+.site-footer{ border-top: 1px solid var(--line); padding: 60px 24px 30px; }
+.footer-inner{
+  max-width: var(--container); margin: 0 auto 30px;
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px;
+}
+.footer-name{ font-family: var(--font-display); font-weight: 700; font-size: 16px; margin-bottom: 6px; }
+.footer-tagline{ color: var(--gray-dim); font-size: 13px; }
+.footer-nav{ display: flex; gap: 20px; font-family: var(--font-mono); font-size: 12.5px; color: var(--gray); }
+.footer-nav a:hover{ color: var(--off-white); }
+.footer-socials{ display: flex; gap: 20px; font-family: var(--font-mono); font-size: 12.5px; color: var(--gray); }
+.footer-socials a:hover{ color: var(--off-white); }
+.footer-copy{ max-width: var(--container); margin: 0 auto; font-family: var(--font-mono); font-size: 11.5px; color: var(--gray-dim); text-align: center; padding-top: 24px; border-top: 1px solid var(--line); }
+
+/* 17. SCROLL REVEAL ------------------------------------------------------------ */
+.reveal{ opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in{ opacity: 1; transform: translateY(0); }
+
+/* 18. RESPONSIVE ---------------------------------------------------------------- */
+@media (max-width: 900px){
+  .about-grid, .content-grid, .contact-grid, .journey-layout, .beyond-layout{ grid-template-columns: 1fr; }
+  .journey-visual{ order: -1; padding: 30px; }
+  .journey-visual svg{ max-width: 160px; }
+  .beyond-visual{ order: -1; margin-bottom: 10px; }
+  .beyond-visual svg{ max-width: 180px; }
+  .focus-grid{ grid-template-columns: repeat(2, 1fr); }
+  .skills-grid{ grid-template-columns: 1fr; }
+  .work-grid{ grid-template-columns: 1fr; }
+}
+
+@media (max-width: 760px){
+  .nav-toggle{ display: block; }
+  .nav-menu{
+    position: fixed; top: 62px; left: 0; right: 0;
+    background: rgba(5,5,5,0.98); backdrop-filter: blur(14px);
+    flex-direction: column; align-items: stretch;
+    padding: 12px 20px 28px;
+    border-bottom: 1px solid var(--line);
+    transform: translateY(-12px); opacity: 0; pointer-events: none;
+    transition: opacity .25s ease, transform .25s ease;
+  }
+  .nav-menu.open{ transform: translateY(0); opacity: 1; pointer-events: auto; }
+  .nav-link{ padding: 14px 8px; border-bottom: 1px solid var(--line); border-radius: 0; }
+  .nav-cta{ margin: 12px 0 0; text-align: center; border-radius: 100px; }
+
+  .hero{ padding-top: 120px; }
+  .section{ padding: 90px 20px; }
+  .focus-grid{ grid-template-columns: 1fr; }
+}
+
+/* 19. REDUCED MOTION -------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce){
+  *{
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<!-- Skip link for keyboard/screen-reader users -->
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============================================================
+     NAVIGATION
+============================================================= -->
+<header class="site-header" id="siteHeader">
+  <nav class="nav" aria-label="Primary">
+    <a href="#top" class="nav-logo">A<span>·</span>R</a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#focus" class="nav-link">Focus</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#work" class="nav-link">Work</a></li>
+      <li><a href="#journey" class="nav-link">Journey</a></li>
+      <li><a href="#content" class="nav-link">Content</a></li>
+      <li><a href="#beyond" class="nav-link">Beyond</a></li>
+      <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ============================================================
+       HERO
+  ============================================================= -->
+  <section class="hero" id="top">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-orbit" aria-hidden="true">
+      <svg viewBox="0 0 600 600" fill="none">
+        <circle cx="300" cy="300" r="260" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+        <circle cx="300" cy="300" r="190" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+        <circle cx="300" cy="300" r="120" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+        <circle class="orbit-dot" cx="560" cy="300" r="3.5" fill="#F5F4F2"/>
+      </svg>
+    </div>
+
+    <div class="hero-inner">
+      <p class="eyebrow reveal">17 &middot; Islamabad, Pakistan</p>
+      <h1 class="hero-title reveal">
+        <span class="line">ALI R.</span>
+        <span class="line">RIZVI.</span>
+      </h1>
+      <p class="hero-tagline reveal">Digital-minded. Tech-curious. Business-focused.</p>
+      <p class="hero-desc reveal">
+        I'm exploring where <strong>digital marketing</strong>, <strong>technology</strong> and <strong>business</strong> meet —
+        learning, building and experimenting my way toward becoming an entrepreneur.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="#work" class="btn btn-solid">Explore my work</a>
+        <a href="#contact" class="btn btn-outline">Let's connect</a>
+      </div>
+    </div>
+
+    <div class="hero-skyline" aria-hidden="true">
+      <svg viewBox="0 0 1200 180" preserveAspectRatio="none" fill="none">
+        <defs>
+          <linearGradient id="duskLine" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#F5334F" stop-opacity="0"/>
+            <stop offset="0.5" stop-color="#FFB84D" stop-opacity="0.35"/>
+            <stop offset="1" stop-color="#A855F7" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="58" width="1200" height="1" fill="url(#duskLine)"/>
+        <g fill="#0D0710" stroke="rgba(255,255,255,0.05)">
+          <rect x="40" y="90" width="46" height="90"/>
+          <rect x="96" y="60" width="34" height="120"/>
+          <rect x="140" y="105" width="52" height="75"/>
+          <rect x="205" y="40" width="30" height="140"/>
+          <rect x="920" y="70" width="40" height="110"/>
+          <rect x="968" y="30" width="30" height="150"/>
+          <rect x="1006" y="95" width="50" height="85"/>
+          <rect x="1064" y="55" width="34" height="125"/>
+          <rect x="1106" y="100" width="54" height="80"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="scroll-cue" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT
+  ============================================================= -->
+  <section class="section" id="about">
+    <div class="section-inner about-grid">
+      <div>
+        <p class="section-label reveal">01 / About</p>
+        <h2 class="section-title reveal">Building a broad foundation, on purpose.</h2>
+        <div class="reveal">
+          <p class="body-text">
+            I'm currently a 2nd-year ICS student at Punjab Group of Colleges (PGC), 2026–27 batch, based in Islamabad.
+            Alongside that, I'm putting time into digital marketing, SEO, web development, content creation and the
+            basics of running a business — not because I want to be known for one skill, but because I want to
+            understand how they work together.
+          </p>
+          <p class="body-text">
+            My long-term direction is broader than becoming a developer or a marketer. I want to understand enough
+            about technology, marketing and business to eventually build something of my own — maybe even a
+            technology company someday. Right now, that means staying curious and putting in the work.
+          </p>
+        </div>
+        <div class="loop-chain reveal" aria-label="My learning process">
+          <span>Learn</span><i></i><span>Experiment</span><i></i><span>Build</span><i></i><span>Improve</span>
+        </div>
+      </div>
+
+      <aside class="fact-card reveal" aria-label="Quick facts">
+        <div class="fact-row"><span class="fact-k">Location</span><span class="fact-v">Islamabad, Pakistan</span></div>
+        <div class="fact-row"><span class="fact-k">Education</span><span class="fact-v">ICS, 2nd Year — PGC</span></div>
+        <div class="fact-row"><span class="fact-k">Batch</span><span class="fact-v">2026–27</span></div>
+        <div class="fact-row"><span class="fact-k">Focus</span><span class="fact-v">Marketing · Tech · Business</span></div>
+        <div class="fact-row"><span class="fact-k">Status</span><span class="fact-v">Actively learning</span></div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOCUS — the "different skills, one bigger picture" section
+  ============================================================= -->
+  <section class="section section-alt" id="focus">
+    <div class="section-inner">
+      <p class="section-label reveal">02 / Focus</p>
+      <h2 class="section-title reveal">Different skills. One bigger picture.</h2>
+      <p class="section-intro reveal">
+        I don't think of these as separate lanes — they're the parts I'm putting together to understand how
+        businesses actually get built, found, and grown.
+      </p>
+
+      <div class="focus-grid">
+        <article class="focus-card reveal">
+          <svg class="focus-icon" width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 18c2-6 4-9 8-13 4 4 6 7 8 13" stroke="#F5F4F2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="14" r="2.2" stroke="#F5F4F2" stroke-width="1.5"/></svg>
+          <h3>Digital Marketing</h3>
+          <p>Social media, content and marketing strategy — how brands actually build an online presence.</p>
+        </article>
+
+        <article class="focus-card reveal">
+          <svg class="focus-icon" width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="10.5" cy="10.5" r="6.5" stroke="#F5F4F2" stroke-width="1.5"/><path d="M20 20l-4.8-4.8" stroke="#F5F4F2" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <h3>SEO &amp; Discovery</h3>
+          <p>How search actually works, and how people find businesses, websites and information online.</p>
+        </article>
+
+        <article class="focus-card reveal">
+          <svg class="focus-icon" width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5" width="17" height="12" rx="1.5" stroke="#F5F4F2" stroke-width="1.5"/><path d="M8 21h8M12 17v4" stroke="#F5F4F2" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <h3>Web &amp; Technology</h3>
+          <p>Web fundamentals, WordPress and GitHub — the technical layer underneath everything else.</p>
+        </article>
+
+        <article class="focus-card reveal">
+          <svg class="focus-icon" width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 14l5-5 4 4 7-7" stroke="#F5F4F2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 6h6v6" stroke="#F5F4F2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Business &amp; Entrepreneurship</h3>
+          <p>Problem-solving, ideas and growth — the mindset I'm trying to build alongside the technical skills.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SKILLS
+  ============================================================= -->
+  <section class="section" id="skills">
+    <div class="section-inner">
+      <p class="section-label reveal">03 / Skills</p>
+      <h2 class="section-title reveal">Developing skills, not a finished skill set.</h2>
+      <p class="section-intro reveal">
+        Everything below is something I'm actively working on — not something I'd call myself an expert in yet.
+      </p>
+
+      <div class="skills-grid">
+        <div class="skill-group reveal">
+          <h3 class="skill-group-title">Digital &amp; Marketing</h3>
+          <div class="tag-row">
+            <span class="tag">Digital Marketing</span>
+            <span class="tag">Social Media Management</span>
+            <span class="tag">Content Strategy</span>
+            <span class="tag">Personal Branding</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal">
+          <h3 class="skill-group-title">SEO</h3>
+          <div class="tag-row">
+            <span class="tag">SEO Fundamentals</span>
+            <span class="tag">Search Optimization</span>
+            <span class="tag">Keyword Research</span>
+            <span class="tag">Search Visibility</span>
+            <span class="tag">Google Search Console</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal">
+          <h3 class="skill-group-title">Web</h3>
+          <div class="tag-row">
+            <span class="tag">WordPress</span>
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">Web Fundamentals</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal">
+          <h3 class="skill-group-title">Creative</h3>
+          <div class="tag-row">
+            <span class="tag">Video Editing</span>
+            <span class="tag">CapCut</span>
+            <span class="tag">Filmora</span>
+            <span class="tag">Canva</span>
+            <span class="tag">Short-Form Content</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal">
+          <h3 class="skill-group-title">AI-Assisted Workflows</h3>
+          <div class="tag-row">
+            <span class="tag">Research</span>
+            <span class="tag">Brainstorming</span>
+            <span class="tag">Writing</span>
+            <span class="tag">Ideation</span>
+            <span class="tag">Experimentation</span>
+          </div>
+          <p class="skill-note">Using AI tools daily to learn faster and think through ideas — still haven't gotten around to dev-focused tools like Cursor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WORK / PROJECTS
+  ============================================================= -->
+  <section class="section section-alt" id="work">
+    <div class="section-inner">
+      <p class="section-label reveal">04 / Work</p>
+      <h2 class="section-title reveal">What I've actually built.</h2>
+
+      <div class="work-grid">
+        <!-- PROJECT CARD — duplicate this <article> block to add a new project -->
+        <article class="work-card reveal">
+          <div class="work-thumb">
+            <!-- Replace this inline SVG with:
+                 <img src="assets/images/projects/portfolio-thumb.jpg" alt="Screenshot of Ali R. Rizvi's personal portfolio website" loading="lazy">
+            -->
+            <svg viewBox="0 0 260 170" width="100%" height="100%" fill="none">
+              <rect x="4" y="4" width="252" height="162" rx="10" fill="#0D0D0D" stroke="rgba(255,255,255,0.12)"/>
+              <rect x="4" y="4" width="252" height="26" rx="10" fill="#141414"/>
+              <circle cx="20" cy="17" r="3" fill="rgba(255,255,255,0.3)"/>
+              <circle cx="30" cy="17" r="3" fill="rgba(255,255,255,0.3)"/>
+              <circle cx="40" cy="17" r="3" fill="rgba(255,255,255,0.3)"/>
+              <rect x="22" y="48" width="70" height="7" rx="3.5" fill="rgba(255,255,255,0.85)"/>
+              <rect x="22" y="64" width="110" height="7" rx="3.5" fill="rgba(255,255,255,0.4)"/>
+              <rect x="22" y="80" width="90" height="7" rx="3.5" fill="rgba(255,255,255,0.4)"/>
+              <rect x="22" y="104" width="60" height="20" rx="10" fill="rgba(255,255,255,0.9)"/>
+            </svg>
+          </div>
+          <div class="work-body">
+            <div class="work-top">
+              <h3>Personal Portfolio</h3>
+              <span class="status-pill status-live">Live</span>
+            </div>
+            <p>My first personal website — the one you're looking at right now. I keep rebuilding and improving it as I learn more and figure out how I actually want to present myself online.</p>
+            <div class="tag-row">
+              <span class="tag tag-sm">Web</span>
+              <span class="tag tag-sm">HTML</span>
+              <span class="tag tag-sm">CSS</span>
+              <span class="tag tag-sm">GitHub</span>
+              <span class="tag tag-sm">Personal Brand</span>
+            </div>
+            <div class="work-links">
+              <a href="#top">Live site ↗</a>
+              <a href="https://github.com/rizviiidev" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Placeholder card — replace or duplicate when a real project is ready -->
+        <article class="work-card work-card-placeholder reveal">
+          <div class="placeholder-icon" aria-hidden="true">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="rgba(255,255,255,0.4)" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h3>More projects in progress.</h3>
+          <p>New builds land here as I finish them — nothing invented, nothing rushed.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       JOURNEY — DigiTechDev + currently learning
+  ============================================================= -->
+  <section class="section" id="journey">
+    <div class="section-inner">
+      <p class="section-label reveal">05 / Journey</p>
+      <h2 class="section-title reveal">Real exposure. Honest progress.</h2>
+
+      <div class="journey-layout">
+        <div class="journey-card reveal">
+          <div class="journey-top">
+            <h3>Practical Learning at DigiTechDev</h3>
+            <a href="https://digitechdev.com" target="_blank" rel="noopener" class="journey-link">digitechdev.com ↗</a>
+          </div>
+          <p class="journey-note">Real-world exposure, not a formal internship — I'm still in college.</p>
+          <p class="body-text">
+            I get hands-on time at DigiTechDev, a technology company run by my uncle, where I can drop in and learn
+            directly from how a real business runs its projects and workflows. It's given me a practical look at
+            digital marketing, SEO and web work beyond just theory.
+          </p>
+          <ul class="journey-list">
+            <li>Suggested ideas for improving social media campaigns — a few were actually used</li>
+            <li>Helped with video and content editing work</li>
+            <li>Picked up practical exposure to SEO, websites and digital workflows</li>
+            <li>Tried applying what I'm learning elsewhere to real, working situations</li>
+          </ul>
+        </div>
+
+        <div class="journey-visual reveal" aria-hidden="true">
+          <svg viewBox="0 0 240 260" fill="none">
+            <rect x="10" y="20" width="220" height="140" rx="10" fill="#0D0D0D" stroke="rgba(255,255,255,0.12)"/>
+            <rect x="24" y="34" width="192" height="112" rx="4" fill="#050505"/>
+            <rect x="36" y="50" width="70" height="6" rx="3" fill="rgba(245,51,79,0.6)"/>
+            <rect x="36" y="64" width="110" height="6" rx="3" fill="rgba(255,255,255,0.3)"/>
+            <rect x="36" y="78" width="90" height="6" rx="3" fill="rgba(255,255,255,0.3)"/>
+            <rect x="36" y="98" width="50" height="30" rx="4" fill="rgba(255,184,77,0.18)" stroke="rgba(255,184,77,0.5)"/>
+            <rect x="96" y="98" width="50" height="30" rx="4" fill="rgba(168,85,247,0.14)" stroke="rgba(168,85,247,0.4)"/>
+            <rect x="156" y="98" width="50" height="30" rx="4" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.2)"/>
+            <rect x="108" y="160" width="24" height="18" fill="#0D0D0D"/>
+            <rect x="80" y="178" width="80" height="8" rx="4" fill="#0D0D0D"/>
+            <circle cx="200" cy="210" r="30" stroke="rgba(255,255,255,0.08)"/>
+            <circle cx="200" cy="210" r="18" stroke="rgba(255,255,255,0.14)"/>
+            <circle cx="200" cy="210" r="3" fill="#F5334F"/>
+          </svg>
+        </div>
+      </div>
+
+      <h3 class="subsection-title reveal">Currently learning</h3>
+      <div class="learning-grid">
+        <div class="learning-chip reveal"><span class="dot"></span>Digital Marketing</div>
+        <div class="learning-chip reveal"><span class="dot"></span>SEO</div>
+        <div class="learning-chip reveal"><span class="dot"></span>Web Development</div>
+        <div class="learning-chip reveal"><span class="dot"></span>Social Media</div>
+        <div class="learning-chip reveal"><span class="dot"></span>Business</div>
+        <div class="learning-chip reveal"><span class="dot"></span>Technology</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTENT — personal brand / future content
+  ============================================================= -->
+  <section class="section section-alt" id="content">
+    <div class="section-inner content-grid">
+      <div>
+        <p class="section-label reveal">06 / Content</p>
+        <h2 class="section-title reveal">Learning in public. Creating soon.</h2>
+        <p class="body-text reveal">
+          I'm setting up to start creating content — not locked into one label like "SEO guy" or "developer."
+          It'll likely be a mix of technology, digital marketing, things I'm learning, experiments, projects,
+          business, and whatever else I genuinely find interesting along the way.
+        </p>
+        <p class="body-text reveal">This site will be the home base for all of it as it comes together.</p>
+      </div>
+      <div class="content-links reveal">
+        <a href="https://instagram.com/aliriz.vi" target="_blank" rel="noopener" class="content-link">
+          <span class="link-label"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="17" cy="7" r="1" fill="currentColor"/></svg>Instagram</span><strong>@aliriz.vi</strong>
+        </a>
+        <a href="https://github.com/rizviiidev" target="_blank" rel="noopener" class="content-link">
+          <span class="link-label"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="2.3" stroke="currentColor" stroke-width="1.5"/><circle cx="7" cy="19" r="2.3" stroke="currentColor" stroke-width="1.5"/><circle cx="18.5" cy="13" r="2.3" stroke="currentColor" stroke-width="1.5"/><path d="M7 9.3V16.7M9.3 7.7h6a2 2 0 012 2V11" stroke="currentColor" stroke-width="1.5"/></svg>GitHub</span><strong>@rizviiidev</strong>
+        </a>
+        <div class="content-link content-link-disabled">
+          <span class="link-label"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4" stroke="currentColor" stroke-width="1.5"/><circle cx="8" cy="8.5" r="1.1" fill="currentColor"/><path d="M8 11.5v5.5M12.5 17v-3.3c0-1.3 1-2.2 2.2-2.2s2.1.9 2.1 2.2V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>LinkedIn</span><strong>Coming soon</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BEYOND — personal interests
+  ============================================================= -->
+  <section class="section" id="beyond">
+    <div class="section-inner beyond-layout">
+      <div>
+        <p class="section-label reveal">07 / Beyond</p>
+        <h2 class="section-title reveal">Outside the screen.</h2>
+
+        <div class="beyond-grid">
+          <div class="beyond-chip reveal"><span aria-hidden="true">🏋️</span>Gym</div>
+          <div class="beyond-chip reveal"><span aria-hidden="true">🎮</span>Gaming</div>
+          <div class="beyond-chip reveal"><span aria-hidden="true">🎸</span>Guitar</div>
+          <div class="beyond-chip reveal"><span aria-hidden="true">💻</span>Technology</div>
+          <div class="beyond-chip reveal"><span aria-hidden="true">🎬</span>Content Creation</div>
+          <div class="beyond-chip reveal"><span aria-hidden="true">📖</span>Reading</div>
+          <div class="beyond-chip reveal"><span aria-hidden="true">🚀</span>Entrepreneurship</div>
+        </div>
+
+        <div class="reading-card reveal">
+          <p class="reading-label">Currently on my shelf</p>
+          <div class="reading-row">
+            <div class="book-spine" style="--spine:#F5334F;"></div>
+            <div>
+              <p class="book-title">Sapiens: A Brief History of Humankind</p>
+              <p class="book-author">Yuval Noah Harari</p>
+            </div>
+          </div>
+          <div class="reading-row">
+            <div class="book-spine" style="--spine:#A855F7;"></div>
+            <div>
+              <p class="book-title">The Picture of Dorian Gray</p>
+              <p class="book-author">Oscar Wilde</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Personality element: an original illustration, not a copyrighted character —
+           inspired by the mood of shonen-anime art (bold linework, dramatic lighting)
+           without depicting any specific IP. -->
+      <div class="beyond-visual reveal" aria-hidden="true">
+        <svg viewBox="0 0 300 340" fill="none">
+          <circle cx="150" cy="170" r="140" fill="#0D0710"/>
+          <path d="M150 60c-14 26-42 30-58 54-18 26-16 62 6 88 20 24 50 34 52 34s32-10 52-34c22-26 24-62 6-88-16-24-44-28-58-54z" fill="#111014" stroke="rgba(255,255,255,0.08)"/>
+          <path d="M96 118c-6 20-30 34-30 34s28 4 40-8" stroke="#F4EEF8" stroke-width="2" stroke-linecap="round"/>
+          <path d="M204 118c6 20 30 34 30 34s-28 4-40-8" stroke="#F4EEF8" stroke-width="2" stroke-linecap="round"/>
+          <path d="M112 176l20 8 18-10 18 10 20-8" stroke="#F4EEF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M124 172c2-6 8-10 14-10s12 4 14 10" stroke="#F5334F" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M148 172c2-6 8-10 14-10s12 4 14 10" stroke="#F5334F" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M118 230c10 14 22 20 32 20s22-6 32-20" stroke="rgba(255,255,255,0.35)" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M40 260c30-6 70-8 110-8s80 2 110 8" stroke="rgba(255,255,255,0.06)"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT
+  ============================================================= -->
+  <section class="section contact-section" id="contact">
+    <div class="section-inner">
+      <p class="section-label reveal">08 / Contact</p>
+      <h2 class="section-title contact-title reveal">Let's build something.</h2>
+      <p class="section-intro reveal">Reach out directly, or use the form — either works.</p>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <a href="mailto:alirizvisyed298@gmail.com" class="contact-email">alirizvisyed298@gmail.com</a>
+          <div class="contact-socials">
+            <a href="https://instagram.com/aliriz.vi" target="_blank" rel="noopener"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="17" cy="7" r="1" fill="currentColor"/></svg>Instagram</a>
+            <a href="https://github.com/rizviiidev" target="_blank" rel="noopener"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="2.3" stroke="currentColor" stroke-width="1.5"/><circle cx="7" cy="19" r="2.3" stroke="currentColor" stroke-width="1.5"/><circle cx="18.5" cy="13" r="2.3" stroke="currentColor" stroke-width="1.5"/><path d="M7 9.3V16.7M9.3 7.7h6a2 2 0 012 2V11" stroke="currentColor" stroke-width="1.5"/></svg>GitHub</a>
+            <span class="social-disabled"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4" stroke="currentColor" stroke-width="1.5"/><circle cx="8" cy="8.5" r="1.1" fill="currentColor"/><path d="M8 11.5v5.5M12.5 17v-3.3c0-1.3 1-2.2 2.2-2.2s2.1.9 2.1 2.2V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>LinkedIn — coming soon</span>
+          </div>
+        </div>
+
+        <!--
+          Contact form: this is a static front-end form only.
+          It does NOT send email by itself on GitHub Pages (no backend).
+          To make it work, connect it to a free form service such as
+          Formspree (formspree.io) — see README.md for exact steps.
+        -->
+        <form class="contact-form reveal" id="contactForm" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-solid btn-full">Send message</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+============================================================= -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <p class="footer-name">Ali R. Rizvi</p>
+      <p class="footer-tagline">Digital-minded. Tech-curious. Business-focused.</p>
+    </div>
+    <ul class="footer-nav">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#journey">Journey</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="footer-socials">
+      <a href="https://instagram.com/aliriz.vi" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://github.com/rizviiidev" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:alirizvisyed298@gmail.com">Email</a>
+    </div>
+  </div>
+  <p class="footer-copy">&copy; 2026 Ali R. Rizvi. All rights reserved.</p>
+</footer>
+
+<script>
+/* =============================================================
+   ALI R. RIZVI — script.js
+   Handles: mobile nav, sticky header state, scroll-reveal animation,
+   active nav-link highlighting, and the (front-end only) contact form.
+============================================================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Mobile nav toggle ---------- */
+  const navToggle = document.getElementById('navToggle');
+  const navMenu = document.getElementById('navMenu');
+
+  navToggle.addEventListener('click', () => {
+    const isOpen = navMenu.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+    navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  });
+
+  // Close mobile menu after clicking a link
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  /* ---------- Sticky header background on scroll ---------- */
+  const header = document.getElementById('siteHeader');
+  const onScroll = () => {
+    header.classList.toggle('scrolled', window.scrollY > 12);
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* ---------- Scroll-reveal animation ---------- */
+  const revealEls = document.querySelectorAll('.reveal');
+  if (reduceMotion) {
+    revealEls.forEach(el => el.classList.add('in'));
+  } else {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => revealObserver.observe(el));
+  }
+
+  /* ---------- Active nav-link highlighting ---------- */
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('main section[id]');
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        const activeLink = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+        if (activeLink) activeLink.classList.add('active');
+      }
+    });
+  }, { threshold: 0.5 });
+  sections.forEach(s => sectionObserver.observe(s));
+
+  /* ---------- Contact form (front-end only) ----------
+     GitHub Pages cannot run a backend, so this form does not send
+     email on its own yet. To make it functional:
+
+     1. Create a free account at https://formspree.io
+     2. Create a new form and copy the endpoint URL it gives you
+        (looks like https://formspree.io/f/xxxxxxx)
+     3. In index.html, change:
+          <form class="contact-form" id="contactForm" novalidate>
+        to:
+          <form class="contact-form" id="contactForm" novalidate
+                action="https://formspree.io/f/xxxxxxx" method="POST">
+     4. Delete or update the JS below — Formspree will handle the
+        submission and redirect/response for you.
+
+     Until then, this just gives the user a clear, honest message
+     and points them to the email address instead. */
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('formStatus');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) {
+      status.textContent = 'Please fill in all fields before sending.';
+      return;
+    }
+    status.textContent =
+      "This form isn't connected to an inbox yet — please email alirizvisyed298@gmail.com directly for now.";
+    form.reset();
+  });
+});
+
+</script>
+</body>
+</html>
